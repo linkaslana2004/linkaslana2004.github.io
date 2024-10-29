@@ -29,14 +29,17 @@
 
   
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="java面向对象的定义  面向对象的思想  使用物理类聚的方法，即分类思维模式，思考问题首先会解决问题需要哪些分类，然后对这些分类进行单独思考。最后，才对某个分类下的细节进行面向过程的思考。 面向对象适合处理复杂的问题，适合处理需要多人协作的问题。   对于描述复杂的事物，为了从宏观上把控，从整体上合理分析，我们需要使用面向对象的思路来分析整个系统。但是，具体到微观的操作，仍然需要面向过程的思路">
+<meta property="og:type" content="article">
 <meta property="og:title" content="java面向对象编程">
 <meta property="og:url" content="http://example.com/2024/10/27/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="八重夜琳的学习博客">
+<meta property="og:description" content="java面向对象的定义  面向对象的思想  使用物理类聚的方法，即分类思维模式，思考问题首先会解决问题需要哪些分类，然后对这些分类进行单独思考。最后，才对某个分类下的细节进行面向过程的思考。 面向对象适合处理复杂的问题，适合处理需要多人协作的问题。   对于描述复杂的事物，为了从宏观上把控，从整体上合理分析，我们需要使用面向对象的思路来分析整个系统。但是，具体到微观的操作，仍然需要面向过程的思路">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-27T10:44:07.000Z">
-<meta property="article:modified_time" content="2024-10-27T10:57:37.771Z">
+<meta property="article:modified_time" content="2024-10-29T06:32:25.227Z">
 <meta property="article:author" content="八重夜琳">
+<meta property="article:tag" content="java, OOP">
 <meta name="twitter:card" content="summary">
   
   
@@ -185,7 +188,7 @@
       <div class="article-date">
   <a href="/2024/10/27/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="article-date-link" data-aos="zoom-in">
     <time datetime="2024-10-27T10:44:07.000Z" itemprop="datePublished">2024-10-27</time>
-    <time style="display: none;" id="post-update-time">2024-10-27</time>
+    <time style="display: none;" id="post-update-time">2024-10-29</time>
   </a>
 </div>
 
@@ -198,7 +201,172 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        
+        <h1 id="java面向对象的定义"><a class="markdownIt-Anchor" href="#java面向对象的定义"></a> java面向对象的定义</h1>
+<ul>
+<li>面向对象的思想
+<ul>
+<li>使用物理类聚的方法，即<mark>分类</mark>思维模式，思考问题首先会解决问题需要哪些分类，然后对这些分类进行单独思考。最后，才对某个分类下的细节进行面向过程的思考。</li>
+<li>面向对象适合处理复杂的问题，适合处理需要多人协作的问题。</li>
+</ul>
+</li>
+<li>对于描述复杂的事物，为了从宏观上把控，从整体上合理分析，我们需要使用面向对象的思路来分析整个系统。但是，具体到微观的操作，仍然需要面向过程的思路去处理。</li>
+<li>面向对象编程（OOP）本质是：<mark>以类的方式组织代码，以对象的组织（封装）数据。</mark></li>
+</ul>
+<h3 id="面向对象编程的四大特性"><a class="markdownIt-Anchor" href="#面向对象编程的四大特性"></a> 面向对象编程的四大特性</h3>
+<ul>
+<li><mark>封装Encapsulation</mark><br />
+将数据（属性）和操作数据的方法封装在对象内部，使用访问控制来限制外部访问。</li>
+<li><mark>继承（Inheritance）</mark>：<br />
+子类继承父类的属性和方法，并可以进行扩展。</li>
+<li><mark>多态（Polymorphism）</mark>：<br />
+同一操作在不同对象上表现出不同的行为。</li>
+<li><mark>抽象（Abstraction）</mark>：<br />
+通过抽象类或接口隐藏复杂的实现细节，暴露简单的接口。</li>
+</ul>
+<h1 id="类与对象"><a class="markdownIt-Anchor" href="#类与对象"></a> 类与对象</h1>
+<ul>
+<li>类是一种抽象的数据类型,而对象则是具体概念的具体实例
+<ul>
+<li>类是一个模板或蓝图，定义了某种事物的属性（变量）和行为（方法）。它本身不占用内存，只是描述了对象该如何构建。</li>
+<li>对象是类的实例。也就是说，通过类创建出来的具体个体就是对象。每个对象都有自己独立的数据。</li>
+<li>举一个例子就是游戏是一个类，而黑神话：悟空则是一个对象。</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建对象"><a class="markdownIt-Anchor" href="#创建对象"></a> 创建对象：</h3>
+<ul>
+<li>使用new的关键词进行对象的创建。需要注意的是，除了分配内存空间之外，还会给创建好的对象，进行默认的初始化以及对类中构造器的调用。</li>
+<li>类中的<mark>构造器</mark>也称为构造方法，在类的对象创建时自动调用。它的主要作用是为新创建的对象赋初始值。
+<ul>
+<li><mark>构造器是由类创建出来的每个对象都要有的属性</mark></li>
+<li>构造器的名称必须和类的名字相同</li>
+<li>必须没有返回类型，也不能写 void</li>
+<li>在创建对象时自动调用</li>
+<li>可以有参数</li>
+<li>可以重载，实现多种初始化方式</li>
+</ul>
+</li>
+<li>类中的<mark>成员方法</mark>是在类中构建出的，用于定义对象行为的方法，其可由对象调用来表示对象所拥有的某种属性。
+<ul>
+<li>其通常包括<mark>访问修饰符</mark>public、private、protected；<mark>返回类型</mark>；<mark>方法名</mark>；<mark>参数列表</mark>以及<mark>方法体</mark></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 定义一个类：Car</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="comment">// 属性（成员变量）</span></span><br><span class="line">    String brand;   <span class="comment">// 品牌</span></span><br><span class="line">    String color;   <span class="comment">// 颜色</span></span><br><span class="line">    <span class="type">int</span> year;       <span class="comment">// 出厂年份</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造方法，用于初始化对象</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Car</span><span class="params">(String brand, String color, <span class="type">int</span> year)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.brand = brand;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">        <span class="built_in">this</span>.year = year;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 成员方法，描述汽车的行为</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(brand + <span class="string">&quot; is starting.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Car Info: &quot;</span> + brand + <span class="string">&quot;, &quot;</span> + color + <span class="string">&quot;, Year: &quot;</span> + year);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 创建对象并使用它</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 使用 Car 类创建两个对象</span></span><br><span class="line">        <span class="type">Car</span> <span class="variable">car1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;Toyota&quot;</span>, <span class="string">&quot;Red&quot;</span>, <span class="number">2020</span>);  <span class="comment">// 对象1</span></span><br><span class="line">        <span class="type">Car</span> <span class="variable">car2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;Honda&quot;</span>, <span class="string">&quot;Blue&quot;</span>, <span class="number">2021</span>);  <span class="comment">// 对象2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用对象的方法</span></span><br><span class="line">        car1.start();        <span class="comment">// 输出：Toyota is starting.</span></span><br><span class="line">        car1.displayInfo();  <span class="comment">// 输出：Car Info: Toyota, Red, Year: 2020</span></span><br><span class="line"></span><br><span class="line">        car2.start();        <span class="comment">// 输出：Honda is starting.</span></span><br><span class="line">        car2.displayInfo();  <span class="comment">// 输出：Car Info: Honda, Blue, Year: 2021</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="封装"><a class="markdownIt-Anchor" href="#封装"></a> 封装</h1>
+<ul>
+<li>封装是是将数据（属性）和操作数据的方法封装在对象内部，并通过访问控制来限制外部对数据的访问和修改。</li>
+</ul>
+<h3 id="封装的好处"><a class="markdownIt-Anchor" href="#封装的好处"></a> 封装的好处</h3>
+<ul>
+<li>可以保护数据的完整性
+<ul>
+<li>避免外部程序<mark>直接</mark>修改对象的状态，防止非法数据的产生。</li>
+</ul>
+</li>
+<li>隐藏内部实现细节
+<ul>
+<li>只暴露必要的接口，使得代码更加简洁、可维护。</li>
+</ul>
+</li>
+<li>易于维护和扩展
+<ul>
+<li>通过方法访问数据，便于在不影响外部代码的情况下进行修改和升级。</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装的视线步骤"><a class="markdownIt-Anchor" href="#封装的视线步骤"></a> 封装的视线步骤</h3>
+<ul>
+<li>将类的属性设置为 private，使得它们不能被类外部直接访问。</li>
+<li>通过public的getter和setter方法提供对属性的访问接口</li>
+<li>在setter方法中进行数据校验，保证数据的合法性。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 将属性声明为 private，防止外部直接访问</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 提供 public 的 getter 方法，允许外部读取属性值</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 提供 public 的 setter 方法，允许外部修改属性值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;  <span class="comment">// 使用 this 引用当前对象的 name 属性</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="comment">// 在 setter 中进行数据校验，防止非法数据</span></span><br><span class="line">        <span class="keyword">if</span> (age &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">this</span>.age = age;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Invalid age. Age cannot be negative.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面对上述已经封装过的代码进行测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用 setter 方法设置属性</span></span><br><span class="line">        person.setName(<span class="string">&quot;Alice&quot;</span>);</span><br><span class="line">        person.setAge(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用 getter 方法获取属性</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Name: &quot;</span> + person.getName());  <span class="comment">// 输出：Name: Alice</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Age: &quot;</span> + person.getAge());    <span class="comment">// 输出：Age: 25</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试非法数据</span></span><br><span class="line">        person.setAge(-<span class="number">5</span>);  <span class="comment">// 输出：Invalid age. Age cannot be negative.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用 displayInfo 方法显示信息</span></span><br><span class="line">        person.displayInfo();  <span class="comment">// 输出：Name: Alice, Age: 25</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="封装的关键点解析"><a class="markdownIt-Anchor" href="#封装的关键点解析"></a> 封装的关键点解析</h3>
+<ul>
+<li>private访问修饰符：
+<ul>
+<li>将属性声明为private，确保它们只能在类内部访问。</li>
+</ul>
+</li>
+<li>getter和setter方法：
+<ul>
+<li>getter用于获取属性值，setter用于修改属性值。</li>
+<li>在setter方法中可以进行数据校验，防止不合理的值被赋给属性。</li>
+</ul>
+</li>
+<li>Java 中的访问修饰符决定了类的属性和方法的访问范围
+<ul>
+<li><mark>private</mark>：只能在类内部访问。</li>
+<li><mark>public</mark>：可以被类外部的所有代码访问。</li>
+<li><mark>protected</mark>：在同一个包内或继承的子类中访问。</li>
+<li><mark>default（不写修饰符）</mark>：只能在同一个包内访问。</li>
+</ul>
+</li>
+</ul>
+<h1 id="继承"><a class="markdownIt-Anchor" href="#继承"></a> 继承</h1>
+<ul>
+<li>允许一个类<mark>继承</mark>另一个类的<mark>属性</mark>和<mark>方法</mark>。通过继承，子类可以<mark>复用</mark>父类的代码，并在此基础上进行<mark>扩展</mark>或<mark>修改</mark>。</li>
+</ul>
+<h3 id="继承的基本概念"><a class="markdownIt-Anchor" href="#继承的基本概念"></a> 继承的基本概念</h3>
+<ul>
+<li>父类(Super Class)/基类(Base Class)
+<ul>
+<li>提供原始属性和方法的类，即提供给子类继承的类</li>
+<li>还有一个别称为超类</li>
+</ul>
+</li>
+<li>子类(Sub Class)/派生类(Derived Class)
+<ul>
+<li>继承父类的类</li>
+<li>继承了父类的所有非私有成员（包括属性和方法），并且可以添加新的属性和方法，或重写（Override）父类的方法。</li>
+</ul>
+</li>
+<li>extends关键字
+<ul>
+<li>用于表示继承关系。子类使用 extends 关键字继承父类。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is eating.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义子类，继承 Animal 类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bark</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is barking.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// 创建 Dog 类对象</span></span><br><span class="line">        dog.name = <span class="string">&quot;Buddy&quot;</span>;  <span class="comment">// 继承了 name 属性</span></span><br><span class="line">        dog.eat();           <span class="comment">// 继承了 eat() 方法</span></span><br><span class="line">        dog.bark();          <span class="comment">// 调用了子类自己的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Buddy is eating.</span><br><span class="line">Buddy is barking</span><br></pre></td></tr></table></figure>
+<h3 id="继承的特点"><a class="markdownIt-Anchor" href="#继承的特点"></a> 继承的特点</h3>
+<ul>
+<li>子类继承父类的所有非私有成员：
+<ul>
+<li>子类可以访问父类的<mark>public</mark>和<mark>protected</mark>成员，但无法访问<mark>private</mark>成员。</li>
+</ul>
+</li>
+<li>单继承：
+<ul>
+<li>Java 中不支持多继承（即一个子类不能同时继承多个类），但可以通过<mark>接口（Interface</mark>实现多继承的效果。</li>
+</ul>
+</li>
+<li>构造器不会被继承，但可以通过super()来调用父类的构造器</li>
+<li>子类可以通过Override来重写父类的方法</li>
+</ul>
+<h3 id="super关键字"><a class="markdownIt-Anchor" href="#super关键字"></a> super()关键字</h3>
+<ul>
+<li>super关键字用于应用父类的成员，其常包括
+<ul>
+<li>调用父类的构造器super()</li>
+<li>调用父类的方法：super.methodName()</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 父类构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Animal</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sound</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; makes a sound.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="comment">// 子类构造器，通过 super 调用父类构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Dog</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重写父类的方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sound</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.sound();  <span class="comment">// 调用父类的 sound 方法</span></span><br><span class="line">        System.out.println(name + <span class="string">&quot; barks.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(<span class="string">&quot;Buddy&quot;</span>);</span><br><span class="line">        dog.sound();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Buddy makes a sound.</span><br><span class="line">Buddy barks.</span><br></pre></td></tr></table></figure>
+<h3 id="override"><a class="markdownIt-Anchor" href="#override"></a> Override</h3>
+<ul>
+<li>使用Override可以让子类重写父类的方法，使用新的实现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;The animal is eating.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="comment">// 重写父类的 eat 方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;The dog is eating.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br><span class="line">        animal.eat();  <span class="comment">// 输出：The animal is eating.</span></span><br><span class="line"></span><br><span class="line">        <span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        dog.eat();  <span class="comment">// 输出：The dog is eating.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The animal is eating.</span><br><span class="line">The dog is eating.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -211,6 +379,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/java-OOP/" rel="tag">java, OOP</a></li></ul>
+
 
     </footer>
   </div>
@@ -221,7 +391,10 @@
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
-        <img data-src="https://example.com" data-sizes="auto" alt="Hello World" class="lazyload">
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="Hello World" class="lazyload">
+        
       
       <a href="/2024/10/26/hello-world/"></a>
       <div class="article-nav-caption">后一篇</div>
@@ -253,7 +426,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text"> java面向对象的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 面向对象编程的四大特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text"> 类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 创建对象：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text"> 封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 封装的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E8%A7%86%E7%BA%BF%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 封装的视线步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9%E8%A7%A3%E6%9E%90"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 封装的关键点解析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">4.</span> <span class="toc-text"> 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">4.0.1.</span> <span class="toc-text"> 继承的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">4.0.2.</span> <span class="toc-text"> 继承的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">4.0.3.</span> <span class="toc-text"> super()关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#override"><span class="toc-number">4.0.4.</span> <span class="toc-text"> Override</span></a></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -274,7 +447,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">1</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -344,10 +517,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        80
+        2.3k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:02
+        00:10
       </div>
     
     
@@ -377,7 +550,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text"> java面向对象的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 面向对象编程的四大特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text"> 类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 创建对象：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text"> 封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 封装的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E8%A7%86%E7%BA%BF%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 封装的视线步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9%E8%A7%A3%E6%9E%90"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 封装的关键点解析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">4.</span> <span class="toc-text"> 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">4.0.1.</span> <span class="toc-text"> 继承的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">4.0.2.</span> <span class="toc-text"> 继承的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">4.0.3.</span> <span class="toc-text"> super()关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#override"><span class="toc-number">4.0.4.</span> <span class="toc-text"> Override</span></a></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -398,7 +571,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">1</div>
   </div>
 </div>
 <div class="sidebar-social">
